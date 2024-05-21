@@ -28,6 +28,8 @@ interface Props {
 }
 
 export const ProductsProvider: FC<Props> = ({ children }) => {
+  const CART_STORAGE_KEY = 'cart_catalog';
+
   const [phones, setPhones] = useState<IProductDetails[]>([]);
   const [_loading, setLoading] = useState(true);
   const [_error, setError] = useState(null);
@@ -50,7 +52,6 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
       .then(data => {
         setPhones(data);
         setLoading(false);
-        console.log(data);
       })
       .catch(error => {
         setError(error);
