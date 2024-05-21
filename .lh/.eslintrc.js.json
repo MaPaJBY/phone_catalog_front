@@ -1,0 +1,26 @@
+{
+    "sourceFile": ".eslintrc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1716217045187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716217091792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+export const extends = [\n+  '@mate-academy/eslint-config-react-typescript',\n+  'plugin:cypress/recommended',\n+];\n+export const rules = {};\n"
+                },
+                {
+                    "date": 1716217097123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+module.exports = {\n+  extends: [\n+    '@mate-academy/eslint-config-react-typescript',\n+    'plugin:cypress/recommended',\n+  ],\n+  rules: {},\n+};\n"
+                }
+            ],
+            "date": 1716217045187,
+            "name": "Commit-0",
+            "content": "export const extends = [\n  '@mate-academy/eslint-config-react-typescript',\n  'plugin:cypress/recommended',\n];\nexport const rules = {};\n"
+        }
+    ]
+}

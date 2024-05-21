@@ -1,0 +1,38 @@
+{
+    "sourceFile": "tsconfig.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1716273048505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716273055420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,21 @@\n     \"sourceMap\": false,\n     \"types\": [\"node\", \"cypress\"],\n     \"plugins\": [{ \"name\": \"typescript-plugin-css-modules\" }]\n   },\n+  {\n+    \"compilerOptions\": {\n+      \"target\": \"es6\",                          // Cel kompilacji\n+      \"module\": \"commonjs\",                     // System modułów\n+      \"strict\": true,                           // Włącza wszystkie opcje ścisłego sprawdzania\n+      \"esModuleInterop\": true,                  // Włącza syntaktykę importowania ES6 do CommonJS\n+      \"skipLibCheck\": true,                     // Pomija sprawdzanie typów w plikach definicji\n+      \"forceConsistentCasingInFileNames\": true, // Wymusza spójność wielkości liter w nazwach plików\n+      \"baseUrl\": \"./src\",                       // Ustawia bazowy katalog dla rozwiązywania ścieżek\n+      \"paths\": {\n+        \"Components/*\": [\"Components/*\"]        // Mapowanie ścieżek\n+      }\n+    },\n+    \"include\": [\"src\"]                         // Włącza katalog `src` do kompilacji\n+  }\n+\n }\n"
+                },
+                {
+                    "date": 1716273065366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,22 +4,7 @@\n   \"compilerOptions\": {\n     \"sourceMap\": false,\n     \"types\": [\"node\", \"cypress\"],\n     \"plugins\": [{ \"name\": \"typescript-plugin-css-modules\" }]\n-  },\n-  {\n-    \"compilerOptions\": {\n-      \"target\": \"es6\",                          // Cel kompilacji\n-      \"module\": \"commonjs\",                     // System modułów\n-      \"strict\": true,                           // Włącza wszystkie opcje ścisłego sprawdzania\n-      \"esModuleInterop\": true,                  // Włącza syntaktykę importowania ES6 do CommonJS\n-      \"skipLibCheck\": true,                     // Pomija sprawdzanie typów w plikach definicji\n-      \"forceConsistentCasingInFileNames\": true, // Wymusza spójność wielkości liter w nazwach plików\n-      \"baseUrl\": \"./src\",                       // Ustawia bazowy katalog dla rozwiązywania ścieżek\n-      \"paths\": {\n-        \"Components/*\": [\"Components/*\"]        // Mapowanie ścieżek\n-      }\n-    },\n-    \"include\": [\"src\"]                         // Włącza katalog `src` do kompilacji\n-  }\n+  \n \n }\n"
+                },
+                {
+                    "date": 1716273072631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+{\n+  \"extends\": \"@mate-academy/students-ts-config\",\n+  \"include\": [\"src\"],\n+  \"compilerOptions\": {\n+    \"sourceMap\": false,\n+    \"types\": [\"node\", \"cypress\"],\n+    \"plugins\": [{ \"name\": \"typescript-plugin-css-modules\" }]\n+  }\n+}\n"
+                },
+                {
+                    "date": 1716273081828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+{\n+  \"extends\": \"@mate-academy/students-ts-config\",\n+  \"include\": [\"src\"],\n+  \"compilerOptions\": {\n+    \"sourceMap\": false,\n+    \"types\": [\"node\", \"cypress\"],\n+    \"plugins\": [{ \"name\": \"typescript-plugin-css-modules\" }]\n+  }\n+}\n+{\n+  \"compilerOptions\": {\n+    \"target\": \"es6\",                          // Cel kompilacji\n+    \"module\": \"commonjs\",                     // System modułów\n+    \"strict\": true,                           // Włącza wszystkie opcje ścisłego sprawdzania\n+    \"esModuleInterop\": true,                  // Włącza syntaktykę importowania ES6 do CommonJS\n+    \"skipLibCheck\": true,                     // Pomija sprawdzanie typów w plikach definicji\n+    \"forceConsistentCasingInFileNames\": true, // Wymusza spójność wielkości liter w nazwach plików\n+    \"baseUrl\": \"./src\",                       // Ustawia bazowy katalog dla rozwiązywania ścieżek\n+    \"paths\": {\n+      \"Components/*\": [\"Components/*\"]        // Mapowanie ścieżek\n+    }\n+  },\n+  \"include\": [\"src\"]                         // Włącza katalog `src` do kompilacji\n+}\n"
+                },
+                {
+                    "date": 1716273139782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,14 @@\n   \"include\": [\"src\"],\n   \"compilerOptions\": {\n     \"sourceMap\": false,\n     \"types\": [\"node\", \"cypress\"],\n+    \"esModuleInterop\": true,\n+    \"skipLibCheck\": true,\n+    \"forceConsistentCasingInFileNames\": true,\n+    \"baseUrl\": \"./src\",\n+    \"paths\": {\n+      \"Components/*\": [\"Components/*\"]\n+    },\n     \"plugins\": [{ \"name\": \"typescript-plugin-css-modules\" }]\n   }\n }\n"
+                }
+            ],
+            "date": 1716273048505,
+            "name": "Commit-0",
+            "content": "{\n  \"extends\": \"@mate-academy/students-ts-config\",\n  \"include\": [\"src\"],\n  \"compilerOptions\": {\n    \"sourceMap\": false,\n    \"types\": [\"node\", \"cypress\"],\n    \"plugins\": [{ \"name\": \"typescript-plugin-css-modules\" }]\n  },\n}\n"
+        }
+    ]
+}

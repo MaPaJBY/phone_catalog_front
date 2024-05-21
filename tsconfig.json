@@ -4,6 +4,13 @@
   "compilerOptions": {
     "sourceMap": false,
     "types": ["node", "cypress"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src",
+    "paths": {
+      "Components/*": ["Components/*"]
+    },
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   }
 }

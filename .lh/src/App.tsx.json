@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/App.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1716216501890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716216507006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+import './App.scss';\n+\n+export const App = () => (\n+  <div className=\"App\">\n+    <h1>Product Catalog</h1>\n+  </div>\n+);\n"
+                },
+                {
+                    "date": 1716216705386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n+import './App.scss';\n+import Home from './Components/Home/Home';\n+import Layout from './components/Layout/Layout';\n+\n+export const App = () => (\n+  <Router>\n+    <Routes>\n+      <Route path=\"/\" element={<Layout />}>\n+        <Route index element={<Home />} />\n+        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n+      </Route>\n+    </Routes>\n+  </Router>\n+);\n"
+                },
+                {
+                    "date": 1716218157821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n+import './App.scss';\n+import Home from './Components/Home/Home';\n+import Layout from './Components/Layout/Layout';\n+\n+export const App = () => (\n+  <Router>\n+    <></>\n+    <Routes>\n+      <Route path=\"/\" element={<Layout />}>\n+        <Route index element={<Home />} />\n+        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n+      </Route>\n+    </Routes>\n+  </Router>\n+);\n"
+                },
+                {
+                    "date": 1716218165543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n+import './App.scss';\n+import Home from './Components/Home/Home';\n+import Layout from './Components/Layout/Layout';\n+\n+export const App = () => (\n+  <Router>\n+    <Header/>\n+    <Routes>\n+      <Route path=\"/\" element={<Layout />}>\n+        <Route index element={<Home />} />\n+        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n+      </Route>\n+    </Routes>\n+  </Router>\n+);\n"
+                },
+                {
+                    "date": 1716218913913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n+import './App.scss';\n+import Home from './Components/Home/Home';\n+import Layout from './Components/Layout/Layout';\n+import {Header from './Components/Header/Header';\n+\n+export const App = () => (\n+  <Router>\n+    <Header/>\n+    <Routes>\n+      <Route path=\"/\" element={<Layout />}>\n+        <Route index element={<Home />} />\n+        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n+      </Route>\n+    </Routes>\n+  </Router>\n+);\n"
+                },
+                {
+                    "date": 1716221178209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n+import './App.scss';\n+import Home from './Components/Home/Home';\n+import Layout from './Components/Layout/Layout';\n+import { Header } from './Components/Header/Header';\n+\n+export const App = () => (\n+  <Router>\n+    <Header />\n+    <Routes>\n+      <Route path=\"/\" element={<Layout />}>\n+        <Route index element={<Home />} />\n+        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n+      </Route>\n+    </Routes>\n+  </Router>\n+);\n"
+                },
+                {
+                    "date": 1716285739969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n+import './App.scss';\n+import Home from './Components/Home/Home';\n+import Layout from './Components/Layout/Layout';\n+import { Header } from './Components/Header/Header';\n+\n+export const App = () => (\n+  <Router>\n+    <Header />\n+    <Layout>\n+\n+    <Routes>\n+      <Route path=\"/\" element={<Layout />}>\n+        <Route index element={<Home />} />\n+        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n+      </Route>\n+    </Routes>\n+  </Router>\n+);\n"
+                },
+                {
+                    "date": 1716285748126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n export const App = () => (\n   <Router>\n     <Header />\n-    <Layout>\n+        <Layout>\n \n     <Routes>\n       <Route path=\"/\" element={<Layout />}>\n         <Route index element={<Home />} />\n@@ -16,99 +16,4 @@\n       </Route>\n     </Routes>\n   </Router>\n );\n-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n-import './App.scss';\n-import Home from './Components/Home/Home';\n-import Layout from './Components/Layout/Layout';\n-import { Header } from './Components/Header/Header';\n-\n-export const App = () => (\n-  <Router>\n-    <Header />\n-    <Routes>\n-      <Route path=\"/\" element={<Layout />}>\n-        <Route index element={<Home />} />\n-        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n-      </Route>\n-    </Routes>\n-  </Router>\n-);\n-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n-import './App.scss';\n-import Home from './Components/Home/Home';\n-import Layout from './Components/Layout/Layout';\n-import {Header from './Components/Header/Header';\n-\n-export const App = () => (\n-  <Router>\n-    <Header/>\n-    <Routes>\n-      <Route path=\"/\" element={<Layout />}>\n-        <Route index element={<Home />} />\n-        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n-      </Route>\n-    </Routes>\n-  </Router>\n-);\n-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n-import './App.scss';\n-import Home from './Components/Home/Home';\n-import Layout from './Components/Layout/Layout';\n-\n-export const App = () => (\n-  <Router>\n-    <Header/>\n-    <Routes>\n-      <Route path=\"/\" element={<Layout />}>\n-        <Route index element={<Home />} />\n-        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n-      </Route>\n-    </Routes>\n-  </Router>\n-);\n-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n-import './App.scss';\n-import Home from './Components/Home/Home';\n-import Layout from './Components/Layout/Layout';\n-\n-export const App = () => (\n-  <Router>\n-    <></>\n-    <Routes>\n-      <Route path=\"/\" element={<Layout />}>\n-        <Route index element={<Home />} />\n-        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n-      </Route>\n-    </Routes>\n-  </Router>\n-);\n-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n-import './App.scss';\n-import Home from './Components/Home/Home';\n-import Layout from './components/Layout/Layout';\n-\n-export const App = () => (\n-  <Router>\n-    <Routes>\n-      <Route path=\"/\" element={<Layout />}>\n-        <Route index element={<Home />} />\n-        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n-      </Route>\n-    </Routes>\n-  </Router>\n-);\n-import './App.scss';\n-\n-export const App = () => (\n-  <div className=\"App\">\n-    <h1>Product Catalog</h1>\n-  </div>\n-);\n-import './App.scss';\n-\n-export const App = () => (\n-  <div className=\"App\">\n-    <h1>Product Catalog</h1>\n-  </div>\n-t);\n"
+                }
+            ],
+            "date": 1716216501890,
+            "name": "Commit-0",
+            "content": "import './App.scss';\n\nexport const App = () => (\n  <div className=\"App\">\n    <h1>Product Catalog</h1>\n  </div>\nt);\n"
+        }
+    ]
+}

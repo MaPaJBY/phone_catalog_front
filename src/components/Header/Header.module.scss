@@ -1,0 +1,110 @@
+@import '../../utils/desktopHeaderFonts';
+@import '../../utils/mobileHeaderFonts';
+@import '../../utils/mediaQueries.module';
+@import '../../constants/colors.module';
+
+body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  color: $primary;
+
+  .logo {
+    margin: 20px 24px;
+    display: flex;
+    align-items: center;
+
+    @include phone {
+      width: 64px;
+      height: 22px;
+    }
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    margin-inline-start: 24px;
+    flex: 1;
+
+    .navlinks {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      flex-grow: 1;
+      max-width: 425px;
+
+      @include h1-font;
+
+      li {
+        a {
+          color: #89939a;
+          text-decoration: none;
+          font-size: 12px;
+
+          &:hover {
+            text-decoration: underline;
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  .icons {
+    display: flex;
+
+    .favoriteIcon {
+      height: 16px;
+      width: 16px;
+      padding: 24px;
+
+      @include phone {
+        display: none;
+      }
+    }
+
+    .cartIcon {
+      height: 16px;
+      width: 16px;
+      padding: 24px;
+
+      @include phone {
+        display: none;
+      }
+    }
+  }
+
+  .burger {
+    height: 16px;
+    width: 16px;
+    padding: 24px;
+    display: none;
+
+    @include phone {
+      display: block;
+    }
+  }
+
+  @include desktop {
+    .burger {
+      display: none;
+    }
+
+    .navbar,
+    .icons {
+      display: flex;
+    }
+  }
+}

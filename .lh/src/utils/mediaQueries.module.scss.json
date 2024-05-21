@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/utils/mediaQueries.module.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1716283519530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716283568153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+@mixin phone {\n+  @media screen and (max-width: 639px) {\n+    @content;\n+  }\n+}\n+\n+@mixin tablet {\n+  @media screen and (max-width: 1199px) and (min-width: 640px) {\n+    @content;\n+  }\n+}\n+\n+@mixin desktop {\n+  @media screen and (max-width: 1439px) and (min-width: 1200px) {\n+    @content;\n+  }\n+}\n+\n+@mixin desktop-large {\n+  @media screen and (min-width: 1440px) {\n+    @content;\n+  }\n+}\n"
+                }
+            ],
+            "date": 1716283519530,
+            "name": "Commit-0",
+            "content": "@mixin phone {\n  @media screen and (max-width: px) {\n    @content;\n  }\n}\n\n@mixin tablet {\n  @media screen and (max-width: 1199px) and (min-width: 640px) {\n    @content;\n  }\n}\n\n@mixin desktop {\n  @media screen and (max-width: 1439px) and (min-width: 1200px) {\n    @content;\n  }\n}\n\n@mixin desktop-large {\n  @media screen and (min-width: 1440px) {\n    @content;\n  }\n}\n"
+        }
+    ]
+}

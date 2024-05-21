@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/Globals.d.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1716223384467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716223391951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+declare module '*.module.scss';\n+declare module '*.scss' {\n+  const content: { [className: string]: string };\n+  export default content;\n+}\n+declare module '*.png' {\n+  const value: any;\n+  export default value;\n+}\n"
+                },
+                {
+                    "date": 1716223402500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+declare module '*.module.scss';\n+declare module '*.scss' {\n+  const content: { [className: string]: string };\n+  export default content;\n+}\n+declare module '*.png' {\n+  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n+  const value: any;\n+  export default value;\n+}\n"
+                },
+                {
+                    "date": 1716223424177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+declare module '*.module.scss';\n+declare module '*.scss' {\n+  const content: { [className: string]: string };\n+  export default content;\n+}\n+declare module '*.png' {\n+  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n+  const value: any;\n+  export default value;\n+}\n"
+                },
+                {
+                    "date": 1716272805351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,33 +2,16 @@\n declare module '*.scss' {\n   const content: { [className: string]: string };\n   export default content;\n }\n+\n declare module '*.png' {\n   // eslint-disable-next-line @typescript-eslint/no-explicit-any\n   const value: any;\n   export default value;\n }\n-declare module '*.module.scss';\n+\n declare module '*.scss' {\n   const content: { [className: string]: string };\n   export default content;\n }\n-declare module '*.png' {\n-  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n-  const value: any;\n-  export default value;\n-}\n-declare module '*.module.scss';\n-declare module '*.scss' {\n-  const content: { [className: string]: string };\n-  export default content;\n-}\n-declare module '*.png' {\n-  const value: any;\n-  export default value;\n-}\n-declare module '*.module.scss';\n-declare module '*.scss' {\n-  const content: { [className: string]: string };\n-  export default content;\n-}\n+\n"
+                },
+                {
+                    "date": 1716272821473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,4 +14,5 @@\n   const content: { [className: string]: string };\n   export default content;\n }\n \n+\n"
+                },
+                {
+                    "date": 1716272840495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+declare module '*.module.scss';\n+declare module '*.scss' {\n+  const content: { [className: string]: string };\n+  export default content;\n+}\n+\n+declare module '*.png' {\n+  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n+  const value: any;\n+  export default value;\n+}\n+\n+declare module '*.scss' {\n+  const content: { [className: string]: string };\n+  export default content;\n+}\n+\n+declare module '*.png' {\n+  const value: string;\n+  export default value;\n+}\n+\n+declare module '*.jpg' {\n+  const value: string;\n+  export default value;\n+}\n+\n+declare module '*.jpeg' {\n+  const value: string;\n+  export default value;\n+}\n+\n+declare module '*.svg' {\n+  const value: string;\n+  export default value;\n+}\n"
+                },
+                {
+                    "date": 1716272850546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+declare module '*.module.scss';\n+declare module '*.scss' {\n+  const content: { [className: string]: string };\n+  export default content;\n+}\n+\n+declare module '*.png' {\n+  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n+  const value: any;\n+  export default value;\n+}\n+\n+declare module '*.scss' {\n+  const content: { [className: string]: string };\n+  export default content;\n+}\n+\n+declare module '*.png' {\n+  const value: string;\n+  export default value;\n+}\n+\n+declare module '*.jpg' {\n+  const value: string;\n+  export default value;\n+}\n+\n+declare module '*.jpeg' {\n+  const value: string;\n+  export default value;\n+}\n+\n+declare module '*.svg' {\n+  const value: string;\n+  export default value;\n+}\n+\n"
+                },
+                {
+                    "date": 1716272857764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,59 +33,4 @@\n declare module '*.svg' {\n   const value: string;\n   export default value;\n }\n-\n-declare module '*.module.scss';\n-declare module '*.scss' {\n-  const content: { [className: string]: string };\n-  export default content;\n-}\n-\n-declare module '*.png' {\n-  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n-  const value: any;\n-  export default value;\n-}\n-\n-declare module '*.scss' {\n-  const content: { [className: string]: string };\n-  export default content;\n-}\n-\n-declare module '*.png' {\n-  const value: string;\n-  export default value;\n-}\n-\n-declare module '*.jpg' {\n-  const value: string;\n-  export default value;\n-}\n-\n-declare module '*.jpeg' {\n-  const value: string;\n-  export default value;\n-}\n-\n-declare module '*.svg' {\n-  const value: string;\n-  export default value;\n-}\n-declare module '*.module.scss';\n-declare module '*.scss' {\n-  const content: { [className: string]: string };\n-  export default content;\n-}\n-\n-declare module '*.png' {\n-  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n-  const value: any;\n-  export default value;\n-}\n-\n-declare module '*.scss' {\n-  const content: { [className: string]: string };\n-  export default content;\n-}\n-\n-\n"
+                },
+                {
+                    "date": 1716272965944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,18 +19,18 @@\n   const value: string;\n   export default value;\n }\n \n-declare module '*.jpg' {\n+declare module '*.svg' {\n   const value: string;\n   export default value;\n }\n \n-declare module '*.jpeg' {\n-  const value: string;\n-  export default value;\n+declare module './Components/Home/Home' {\n+  const Home: React.ComponentType;\n+  export default Home;\n }\n \n-declare module '*.svg' {\n-  const value: string;\n-  export default value;\n+declare module './Components/Layout/Layout' {\n+  const Layout: React.ComponentType;\n+  export default Layout;\n }\n"
+                },
+                {
+                    "date": 1716272983557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,13 +24,4 @@\n   const value: string;\n   export default value;\n }\n \n-declare module './Components/Home/Home' {\n-  const Home: React.ComponentType;\n-  export default Home;\n-}\n-\n-declare module './Components/Layout/Layout' {\n-  const Layout: React.ComponentType;\n-  export default Layout;\n-}\n"
+                }
+            ],
+            "date": 1716223384467,
+            "name": "Commit-0",
+            "content": "declare module '*.module.scss';\ndeclare module '*.scss' {\n  const content: { [className: string]: string };\n  export default content;\n}\n"
+        }
+    ]
+}

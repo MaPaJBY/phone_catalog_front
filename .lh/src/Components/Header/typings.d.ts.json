@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/Components/Header/typings.d.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1716217468678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1716217468678,
+            "name": "Commit-0",
+            "content": "declare module '*.module.scss';\n"
+        }
+    ]
+}
