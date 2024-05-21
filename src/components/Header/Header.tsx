@@ -1,17 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
-
-import favoriteIcon from './icons/favoriteIcon.png';
-import cartIcon from './icons/cart.png';
-import iconOk from './icons/logo-ok.png';
-import burger from './icons/burger.png';
+import Icon from 'Components/Icon';
+import { Icons } from 'types';
 
 export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <img src={iconOk} alt="logo" />
+      <div className={styles.divLogo}>
+        <Icon iconId={Icons.LOGO} className={`${styles['logo-icon']}`} />
       </div>
       <nav className={styles.navbar}>
         <ul className={styles.navlinks}>
@@ -30,14 +27,10 @@ export const Header: React.FC = () => {
         </ul>
       </nav>
       <div className={styles.icons}>
-        <img
-          className={styles.favoriteIcon}
-          src={favoriteIcon}
-          alt="favorite"
-        />
-        <img className={styles.cartIcon} src={cartIcon} alt="cart" />
-        <div className={styles.burger}>
-          <img src={burger} alt="burger" />
+        <Icon iconId={Icons.HEART} className={styles.heart} />
+        <Icon iconId={Icons.CART} className={styles.cart} />
+        <div className={styles.union}>
+          {/* <Icon iconId={Icons.UNION} /> */}
         </div>
       </div>
     </header>

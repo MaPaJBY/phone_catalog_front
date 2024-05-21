@@ -16,15 +16,26 @@ body {
   height: 64px;
   border: 1px solid $elements;
 
-  .logo {
-    margin: 20px 24px;
-    display: flex;
-    align-items: center;
+  .divLogo {
+    // width: 128px;
+    // height: 64px;
+    padding: 18px 24px;
 
     @include phone {
-      width: 64px;
-      height: 22px;
+      // width: 96px;
+      // height: 48px;
+      padding: 14px 16px;
     }
+
+    // .logo-icon {
+    //   width: 80px;
+    //   height: 26.47px;
+    // }
+
+    // @include phone {
+    //   width: 64px;
+    //   height: 22px;
+    // }
   }
 
   .navbar {
@@ -33,10 +44,13 @@ body {
     margin-inline-start: 24px;
     flex: 1;
 
+    @include tablet {
+      margin-inline-start: 12px;
+    }
+
     .navlinks {
       display: flex;
       justify-content: space-between;
-      list-style: none;
       margin: 0;
       padding: 0;
       text-transform: uppercase;
@@ -44,6 +58,10 @@ body {
       max-width: 425px;
 
       @include h1-font;
+      @include tablet {
+        max-width: 329px;
+
+      }
 
       li {
         a {
@@ -60,7 +78,7 @@ body {
               position: absolute;
               left: 0;
               right: 0;
-              bottom: -20px;
+              bottom: -21px;
               height: 1px;
               background-color: $primary;
             }
@@ -77,7 +95,8 @@ body {
   .icons {
     display: flex;
 
-    .favoriteIcon, .cartIcon {
+    .heart,
+    .cart {
       height: 16px;
       width: 16px;
       padding: 24px;
@@ -100,7 +119,7 @@ body {
     }
   }
 
-  .burger {
+  .union {
     height: 16px;
     width: 16px;
     padding: 24px;
@@ -123,7 +142,7 @@ body {
   }
 
   @include desktop {
-    .burger {
+    .union {
       display: none;
     }
 

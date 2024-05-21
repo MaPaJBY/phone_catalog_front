@@ -13,3 +13,6 @@ raw_reports
 reports
 cypress/screenshots
 cypress/videos
+
+src/Globals.d.ts
+tsconfig.json

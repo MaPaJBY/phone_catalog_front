@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1716216501890,
@@ -64,6 +64,18 @@
                 {
                     "date": 1716297094715,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n+import './App.scss';\n+import Layout from './Components/Layout/Layout';\n+import PhonesPage from './Components/PhonesPage/PhonesPage';\n+import HomePage from './Components/HomePage/HomePage';\n+\n+export const App = () => (\n+  <Router>\n+    <Routes>\n+      <Route path=\"/\" element={<Layout />}>\n+        <Route index element={<HomePage />} />\n+        <Route path=\"phones\" element={<PhonesPage />} />=\n+        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n+      </Route>\n+    </Routes>\n+  </Router>\n+);\n"
+                },
+                {
+                    "date": 1716297483375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,40 +1,6 @@\n import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n import './App.scss';\n-import Layout from './Components/Layout/Layout';\n-import PhonesPage from './Components/PhonesPage/PhonesPage';\n-import HomePage from './Components/HomePage/HomePage';\n-\n-export const App = () => (\n-  <Router>\n-    <Routes>\n-      <Route path=\"/\" element={<Layout />}>\n-        <Route index element={<HomePage />} />\n-        <Route path=\"phones\" element={<PhonesPage />} />=\n-        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n-      </Route>\n-    </Routes>\n-  </Router>\n-);\n-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n-import './App.scss';\n-import Layout from './Components/Layout/Layout';\n-import PhonesPage from './components/PhonesPage/PhonesPage';\n-import HomePage from './components/HomePage/HomePage';\n-\n-export const App = () => (\n-  <Router>\n-    <Routes>\n-      <Route path=\"/\" element={<Layout />}>\n-        <Route index element={<HomePage />} />\n-        <Route path=\"phones\" element={<PhonesPage />} />=\n-        {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n-      </Route>\n-    </Routes>\n-  </Router>\n-);\n-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n-import './App.scss';\n import Layout from './components/Layout/Layout';\n import PhonesPage from './components/PhonesPage/PhonesPage';\n import HomePage from './components/HomePage/HomePage';\n \n@@ -42,9 +8,10 @@\n   <Router>\n     <Routes>\n       <Route path=\"/\" element={<Layout />}>\n         <Route index element={<HomePage />} />\n-        <Route path=\"phones\" element={<PhonesPage />} />=\n+        <Route path=\"phones\" element={<PhonesPage />} />\n+        <Route path=\"cart\" element={<CartPage />} />\n         {/* <Route path=\"*\" element={<ErrorPage />} /> */}\n       </Route>\n     </Routes>\n   </Router>\n"
+                },
+                {
+                    "date": 1716297492854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';\n import './App.scss';\n-import Layout from './components/Layout/Layout';\n-import PhonesPage from './components/PhonesPage/PhonesPage';\n-import HomePage from './components/HomePage/HomePage';\n+import Layout from './Components/Layout/Layout';\n+import PhonesPage from './Components/PhonesPage/PhonesPage';\n+import HomePage from './Components/HomePage/HomePage';\n \n export const App = () => (\n   <Router>\n     <Routes>\n"
+                },
+                {
+                    "date": 1716297501710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import './App.scss';\n import Layout from './Components/Layout/Layout';\n import PhonesPage from './Components/PhonesPage/PhonesPage';\n import HomePage from './Components/HomePage/HomePage';\n+import CartPage from 'Components/CartPage/CartPage';\n \n export const App = () => (\n   <Router>\n     <Routes>\n"
                 }
             ],
             "date": 1716216501890,

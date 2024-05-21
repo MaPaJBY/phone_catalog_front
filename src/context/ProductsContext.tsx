@@ -11,7 +11,6 @@ interface IProductsContext {
   phones: IProductDetails[];
 }
 
-
 export const ProductsContext = createContext<IProductsContext>({
   phones: [],
 });
@@ -24,11 +23,9 @@ type CartItems = {
   [key: string]: ICartItem;
 };
 
-
 interface Props {
   children: React.ReactNode;
 }
-
 
 export const ProductsProvider: FC<Props> = ({ children }) => {
   const [phones, setPhones] = useState<IProductDetails[]>([]);
@@ -36,12 +33,9 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
   const [, setError] = useState(null);
   const CART_STORAGE_KEY = 'cart_catalog';
 
-  const [phones, setPhones] = useState<IProductDetails[]>([]);
-  const [_loading, setLoading] = useState(true);
-  const [_error, setError] = useState(null);
-
-  const [cartItems, setCartItems] = useState<CartItems>(() => {
+  const [cartItems] = useState<CartItems>(() => {
     const item = localStorage.getItem(CART_STORAGE_KEY);
+
     return item ? JSON.parse(item) : {};
   });
 
@@ -73,6 +67,7 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
   useEffect(() => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
   }, [cartItems]);
+
   return (
     <ProductsContext.Provider
       value={{
