@@ -1,15 +1,15 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.scss';
-import Home from './Components/Home/Home';
 import Layout from './Components/Layout/Layout';
-import { Header } from './Components/Header/Header';
+import PhonesPage from './Components/PhonesPage/PhonesPage';
+import HomePage from './Components/HomePage/HomePage';
 
 export const App = () => (
   <Router>
-    <Header />
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route index element={<HomePage />} />
+        <Route path="phones" element={<PhonesPage />} />=
         {/* <Route path="*" element={<ErrorPage />} /> */}
       </Route>
     </Routes>
