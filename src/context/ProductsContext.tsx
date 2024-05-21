@@ -5,24 +5,45 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { IProductDetails } from '../types';
+import { ICartProduct, IProductDetails } from '../types';
 
 interface IProductsContext {
   phones: IProductDetails[];
 }
 
+
 export const ProductsContext = createContext<IProductsContext>({
   phones: [],
 });
+
+interface ICartItem {
+  count: number;
+  product: ICartProduct;
+}
+type CartItems = {
+  [key: string]: ICartItem;
+};
+
 
 interface Props {
   children: React.ReactNode;
 }
 
+
 export const ProductsProvider: FC<Props> = ({ children }) => {
   const [phones, setPhones] = useState<IProductDetails[]>([]);
   const [, setLoading] = useState(true);
   const [, setError] = useState(null);
+  const CART_STORAGE_KEY = 'cart_catalog';
+
+  const [phones, setPhones] = useState<IProductDetails[]>([]);
+  const [_loading, setLoading] = useState(true);
+  const [_error, setError] = useState(null);
+
+  const [cartItems, setCartItems] = useState<CartItems>(() => {
+    const item = localStorage.getItem(CART_STORAGE_KEY);
+    return item ? JSON.parse(item) : {};
+  });
 
   useEffect(() => {
     fetch('/api/phones.json')
@@ -45,6 +66,13 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
       });
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  useEffect(() => {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+  }, [cartItems]);
   return (
     <ProductsContext.Provider
       value={{
