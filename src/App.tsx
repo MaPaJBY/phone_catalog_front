@@ -3,6 +3,7 @@ import './App.scss';
 import Layout from './components/Layout/Layout';
 import PhonesPage from './components/PhonesPage/PhonesPage';
 import HomePage from './components/HomePage/HomePage';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 export const App = () => (
   <Router>
@@ -10,7 +11,7 @@ export const App = () => (
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="phones" element={<PhonesPage />} />=
-        {/* <Route path="*" element={<ErrorPage />} /> */}
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   </Router>
