@@ -7,7 +7,7 @@ export default function NotFoundPage({}: Props) {
     <div className={styles.all}>
       <h1 className={styles.title}>Page not found</h1>
       <img
-        className={styles.image}
+        className={styles.photo}
         src={'/img/product-not-found.png'}
         alt="not found page"
       />
