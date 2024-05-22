@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { IProductDetails } from '../../../../types';
 
 import s from './Description.module.scss';
@@ -8,7 +6,7 @@ interface Props {
   product: IProductDetails;
 }
 
-const Description: FC<Props> = ({ product }) => {
+export default function Description({ product }: Props) {
   const {
     description,
     screen,
@@ -84,6 +82,4 @@ const Description: FC<Props> = ({ product }) => {
       </div>
     </>
   );
-};
-
-export default Description;
+}

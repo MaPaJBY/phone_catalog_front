@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
         <Icon iconId={Icons.HEART} className={styles.heart} />
         <Icon iconId={Icons.CART} className={styles.cart} />
         <div className={styles.union}>
-          {/* <Icon iconId={Icons.UNION} /> */}
+          <Icon iconId={Icons.BURGER} className={styles.burger} />
         </div>
       </div>
     </header>

@@ -120,7 +120,7 @@ body {
     }
   }
 
-  .union {
+  .burger {
     height: 16px;
     width: 16px;
     padding: 24px;
@@ -147,17 +147,6 @@ body {
 
     @include desktop {
       display: none;
-    }
-  }
-
-  @include desktop {
-    .union {
-      display: none;
-    }
-
-    .navbar,
-    .icons {
-      display: flex;
     }
   }
 }
