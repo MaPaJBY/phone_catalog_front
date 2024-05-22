@@ -1,10 +1,15 @@
-import React, { createContext, FC, useContext, useEffect, useState } from 'react';
+import React, {
+  createContext,
+  FC,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { ICartProduct, IProductDetails } from '../types';
 
 interface IProductsContext {
   phones: IProductDetails[];
 }
-
 
 export const ProductsContext = createContext<IProductsContext>({
   phones: [],
@@ -18,11 +23,9 @@ type CartItems = {
   [key: string]: ICartItem;
 };
 
-
 interface Props {
   children: React.ReactNode;
 }
-
 
 export const ProductsProvider: FC<Props> = ({ children }) => {
   const CART_STORAGE_KEY = 'cart_catalog';
@@ -33,22 +36,24 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
 
   const [cartItems, setCartItems] = useState<CartItems>(() => {
     const item = localStorage.getItem(CART_STORAGE_KEY);
+
     return item ? JSON.parse(item) : {};
   });
 
   useEffect(() => {
     fetch('/api/phones.json')
-      .then((response) => {
+      .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
+
         return response.json();
       })
-      .then((data) => {
+      .then(data => {
         setPhones(data);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(error => {
         setError(error);
         setLoading(false);
       });
@@ -57,6 +62,7 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
   useEffect(() => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
   }, [cartItems]);
+
   return (
     <ProductsContext.Provider
       value={{
@@ -72,7 +78,9 @@ export const useProductsContext = (): IProductsContext => {
   const context = useContext(ProductsContext);
 
   if (!context) {
-    throw new Error('useProductsContext must be used within a ProductsProvider');
+    throw new Error(
+      'useProductsContext must be used within a ProductsProvider',
+    );
   }
 
   return context;

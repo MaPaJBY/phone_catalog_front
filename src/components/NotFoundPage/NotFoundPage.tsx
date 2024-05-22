@@ -1,13 +1,16 @@
-import { FC } from 'react';
 import styles from './NotFoundPage.module.scss';
 
-const NotFoundPage: FC = () => {
+type Props = {};
+
+export default function NotFoundPage({}: Props) {
   return (
     <div className={styles.all}>
       <h1 className={styles.title}>Page not found</h1>
-      <img src={require('./page-not-found.png')} alt="not found page" />
+      <img
+        className={styles.image}
+        src={'/img/product-not-found.png'}
+        alt="not found page"
+      />
     </div>
   );
-};
-
-export default NotFoundPage;
+}

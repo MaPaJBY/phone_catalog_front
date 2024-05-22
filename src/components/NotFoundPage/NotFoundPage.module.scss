@@ -1,4 +1,3 @@
-@import '../../utils/mediaQueries.module';
 @import '../../utils/desktopHeaderFonts';
 
 .all {
@@ -13,3 +12,6 @@
   @include h1-font;
 }
 
+.image {
+  height: 80vh;
+}
