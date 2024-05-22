@@ -14,5 +14,24 @@ reports
 cypress/screenshots
 cypress/videos
 
-src/Globals.d.ts
+Globals.d.ts.json
 tsconfig.json
+img/sprite.svg.json
+Button.tsx.json
+ProductsContext.tsx.json
+PhonesPage.tsx.json
+Icon.tsx.json
+App.tsx.json
+.gitignore.json
+.lh/.gitignore.json
+.lh/public/img/sprite.svg.json
+.lh/src/context/ProductsContext.tsx.json
+.lh/.gitignore.json
+src/.lh/.lhignore
+.lh/src/Components/Icon/Icon.tsx.json
+.lh/src/Components/ProductDetails/components/Description/Description.module.scss.json
+.lh/src/Components/ProductDetails/components/Description/Description.tsx.json
+.lh/src/context/ProductsContext.tsx.json
+.lh/src/Components/Icon/Icon.tsx.json
+.lh/public/img/sprite.svg.json
+.lh/.gitignore.json

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1716360581936,
@@ -24,6 +24,10 @@
                 {
                     "date": 1716360764137,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { FC } from 'react';\n-// import s from './Icon.module.scss';\n-// import cn from 'classnames';\n+import s from './Icon.module.scss';\n+import cn from 'classnames';\n \n interface Props {\n   iconId: string;\n   className?: string;\n"
+                },
+                {
+                    "date": 1716379375252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   className?: string;\n }\n const Icon: FC<Props> = ({ iconId, className }) => {\n   return (\n-    <svg className={className} width=\"16\" height=\"16\">\n+    <svg className={cn(s.container, className)}>\n       <use href={`img/sprite.svg#${iconId}`} />\n     </svg>\n   );\n };\n"
                 }
             ],
             "date": 1716360581936,

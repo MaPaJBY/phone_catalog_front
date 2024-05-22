@@ -1,10 +1,10 @@
 type Props = {};
-import { useProductsContext } from '../../context/ProductsContext';
-import ProductCard from '../ProductCard';
+// import { useProductsContext } from '../../context/ProductsContext';
+// import ProductCard from '../ProductCard';
 import styles from './PhonesPage.module.scss';
 
 export default function PhonesPage({}: Props) {
-  const { phones } = useProductsContext();
+  // const { phones } = useProductsContext();
 
   return (
     <main className={styles.phonesPage}>
@@ -13,9 +13,9 @@ export default function PhonesPage({}: Props) {
       <div className={styles.filter}>Sort placeholder</div>
       <div className={styles.filter}>Items placeholder</div>
       <div className={styles.cardsContainer}>
-        {phones.map(phone => (
+        {/* {phones.map(phone => (
           <ProductCard key={phone.id} phone={phone} />
-        ))}
+        ))} */}
       </div>
       <div className={styles.pageSelector}>Selector placeholder</div>
     </main>

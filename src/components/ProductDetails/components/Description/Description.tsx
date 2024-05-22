@@ -59,10 +59,12 @@ const Description: FC<Props> = ({ product }) => {
   return (
     <>
       <div className={s.about}>
-        <h2 title="About" className={s.title}>About</h2>
+        <h2 title="About" className={s.title}>
+          About
+        </h2>
         <ul>
           {description.map(({ title, text }) => (
-            <li className={s.aboutItem}>
+            <li key={title} className={s.aboutItem}>
               <h3 className={s.aboutItemTitle}>{title}</h3>
               <p className={s.aboutItemText}>{text}</p>
             </li>
@@ -73,7 +75,7 @@ const Description: FC<Props> = ({ product }) => {
         <h2 className={s.title}>Tech specs</h2>
         <ul className={s.techList}>
           {techItems.map(({ title, value }) => (
-            <li className={s.techItem}>
+            <li key={title} className={s.techItem}>
               <span className={s.techTitle}>{title}</span>
               <span>{value}</span>
             </li>

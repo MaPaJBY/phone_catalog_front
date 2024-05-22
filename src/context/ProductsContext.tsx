@@ -10,12 +10,13 @@ import { ICartProduct, IProductDetails } from '../types';
 interface IProductsContext {
   phones: IProductDetails[];
   isItemInCart: (productId: string) => boolean;
-  addItem: (product: ICartProduct) => void
+  addItem: (product: ICartProduct) => void;
 }
 
 export const ProductsContext = createContext<IProductsContext>({
   phones: [],
   isItemInCart: () => false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   addItem: (_product: ICartProduct) => {},
 });
 
@@ -37,7 +38,7 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
   const [, setError] = useState(null);
   const CART_STORAGE_KEY = 'cart_catalog';
 
-  const [cartItems] = useState<CartItems>(() => {
+  const [cartItems, setCartItems] = useState<CartItems>(() => {
     const item = localStorage.getItem(CART_STORAGE_KEY);
 
     return item ? JSON.parse(item) : {};
@@ -46,7 +47,7 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
   const isItemInCart = (id: string) => !!cartItems[id];
 
   const addItem = (product: ICartProduct) => {
-    setCartItems((prevCartItems) => {
+    setCartItems((prevCartItems: CartItems) => {
       const prevProduct = prevCartItems[product.id];
 
       return {
@@ -92,7 +93,7 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
       value={{
         phones,
         isItemInCart,
-        addItem
+        addItem,
       }}
     >
       {children}

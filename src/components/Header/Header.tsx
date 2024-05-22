@@ -3,13 +3,14 @@ import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
 import Icon from 'Components/Icon';
 import { Icons } from 'types';
+import logoForHeader from './logoForHeader/Logo.png';
 
 export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.divLogo}>
-        <Icon iconId={Icons.LOGO} className={`${styles['logo-icon']}`} />
-      </div>
+      {/* <div className={styles.divLogo}> */}
+      <img className={styles.divLogo} src={logoForHeader} alt="logo" />
+      {/* </div> */}
       <nav className={styles.navbar}>
         <ul className={styles.navlinks}>
           <li>

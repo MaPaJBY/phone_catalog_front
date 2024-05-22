@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1716296981114,
@@ -88,6 +88,14 @@
                 {
                     "date": 1716302217148,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n   const [, setLoading] = useState(true);\n   const [, setError] = useState(null);\n   const CART_STORAGE_KEY = 'cart_catalog';\n \n-  const [cartItems, = useState<CartItems>(() => {\n+  const [cartItems] = useState<CartItems>(() => {\n     const item = localStorage.getItem(CART_STORAGE_KEY);\n \n     return item ? JSON.parse(item) : {};\n   });\n@@ -66,8 +66,9 @@\n \n   useEffect(() => {\n     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));\n   }, [cartItems]);\n+  \n   return (\n     <ProductsContext.Provider\n       value={{\n         phones,\n"
+                },
+                {
+                    "date": 1716379468280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,16 @@\n import { ICartProduct, IProductDetails } from '../types';\n \n interface IProductsContext {\n   phones: IProductDetails[];\n+  isItemInCart: (productId: string) => boolean;\n+  addItem: (product: ICartProduct) => void\n }\n \n export const ProductsContext = createContext<IProductsContext>({\n   phones: [],\n+  isItemInCart: () => false,\n+  addItem: (_product: ICartProduct) => {},\n });\n \n interface ICartItem {\n   count: number;\n@@ -38,8 +42,23 @@\n \n     return item ? JSON.parse(item) : {};\n   });\n \n+  const isItemInCart = (id: string) => !!cartItems[id];\n+\n+  const addItem = (product: ICartProduct) => {\n+    setCartItems(prevCartItems => {\n+      const prevProduct = prevCartItems[product.id];\n+\n+      return {\n+        ...prevCartItems,\n+        [product.id]: prevProduct\n+          ? { ...prevProduct, count: prevProduct.count + 1 }\n+          : { product, count: 1 },\n+      };\n+    });\n+  };\n+\n   useEffect(() => {\n     fetch('/api/phones.json')\n       .then(response => {\n         if (!response.ok) {\n@@ -66,13 +85,15 @@\n \n   useEffect(() => {\n     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));\n   }, [cartItems]);\n-  \n+\n   return (\n     <ProductsContext.Provider\n       value={{\n         phones,\n+        isItemInCart,\n+        addItem\n       }}\n     >\n       {children}\n     </ProductsContext.Provider>\n"
+                },
+                {
+                    "date": 1716379474784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n \n   const isItemInCart = (id: string) => !!cartItems[id];\n \n   const addItem = (product: ICartProduct) => {\n-    \n+  \n     setCartItems((prevCartItems) => {\n       const prevProduct = prevCartItems[product.id];\n \n       return {\n"
                 }
             ],
             "date": 1716296981114,

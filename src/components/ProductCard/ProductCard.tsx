@@ -11,17 +11,26 @@ interface Props {
 }
 const ProductCard: FC<Props> = ({ product }) => {
   const { isItemInCart, addItem } = useProductsContext();
-  const { id, name, capacity, ram, priceDiscount, priceRegular, screen, images } = product;
-  
+  const {
+    id,
+    name,
+    capacity,
+    ram,
+    priceDiscount,
+    priceRegular,
+    screen,
+    images,
+  } = product;
+
   const isProductInCard = isItemInCart(id);
 
   const cartProduct = {
     id,
     name,
     image: images[0],
-    price:priceDiscount
+    price: priceDiscount,
   };
-  
+
   return (
     <div
       className={cn(s.container, '__app-PhoneCard-container')}

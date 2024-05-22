@@ -2,7 +2,7 @@ import { FC } from 'react';
 import cn from 'classnames';
 
 import s from './Button.module.scss';
-import Icon from '../Icon';
+import Icon from 'Components/Icon';
 import { Icons } from '../../types';
 
 interface Props {
