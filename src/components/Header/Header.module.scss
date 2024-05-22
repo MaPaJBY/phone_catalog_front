@@ -17,6 +17,9 @@ body {
   border: 1px solid $elements;
 
   .divLogo {
+    // na razie w taki sposób, później naprawię logo na q&a,
+    // bo coś tutaj się nie zgadza
+    
     // width: 128px;
     // height: 64px;
     padding: 18px 24px;
@@ -27,15 +30,15 @@ body {
       padding: 14px 16px;
     }
 
-    // .logo-icon {
-    //   width: 80px;
-    //   height: 26.47px;
-    // }
+    .logo-icon {
+      width: 80px;
+      height: 26.47px;
+    }
 
-    // @include phone {
-    //   width: 64px;
-    //   height: 22px;
-    // }
+    @include phone {
+      width: 64px;
+      height: 22px;
+    }
   }
 
   .navbar {
@@ -58,6 +61,7 @@ body {
       max-width: 425px;
 
       @include h1-font;
+
       @include tablet {
         max-width: 329px;
 

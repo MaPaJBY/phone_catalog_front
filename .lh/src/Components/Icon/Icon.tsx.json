@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/Components/Icon/Icon.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1716360581936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716360598693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   className?: string;\n }\n const Icon: FC<Props> = ({ iconId, className }) => {\n   return (\n-    <svg className={cn(className)}>\n+    <svg className={cn(s.container, className)}>\n       <use href={`img/sprite.svg#${iconId}`} />\n     </svg>\n   );\n };\n"
+                },
+                {
+                    "date": 1716360739919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,12 @@\n   className?: string;\n }\n const Icon: FC<Props> = ({ iconId, className }) => {\n   return (\n-    <svg className={cn(s.container, className)}>\n-      <use href={`img/sprite.svg#${iconId}`} />\n-    </svg>\n+    <svg className={className} width=\"16\" height=\"16\">\n+    <use href={`img/sprite.svg#${iconId}`} />\n+  </svg>\n+\n   );\n };\n \n export default Icon;\n"
+                },
+                {
+                    "date": 1716360747590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,17 @@\n import { FC } from 'react';\n-import s from './Icon.module.scss';\n-import cn from 'classnames';\n+// import s from './Icon.module.scss';\n+// import cn from 'classnames';\n \n interface Props {\n   iconId: string;\n   className?: string;\n }\n const Icon: FC<Props> = ({ iconId, className }) => {\n   return (\n     <svg className={className} width=\"16\" height=\"16\">\n-    <use href={`img/sprite.svg#${iconId}`} />\n-  </svg>\n-\n+      <use href={`img/sprite.svg#${iconId}`} />\n+    </svg>\n   );\n };\n \n export default Icon;\n"
+                },
+                {
+                    "date": 1716360764137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { FC } from 'react';\n-// import s from './Icon.module.scss';\n-// import cn from 'classnames';\n+import s from './Icon.module.scss';\n+import cn from 'classnames';\n \n interface Props {\n   iconId: string;\n   className?: string;\n"
+                }
+            ],
+            "date": 1716360581936,
+            "name": "Commit-0",
+            "content": "import { FC } from 'react';\nimport s from './Icon.module.scss';\nimport cn from 'classnames';\n\ninterface Props {\n  iconId: string;\n  className?: string;\n}\nconst Icon: FC<Props> = ({ iconId, className }) => {\n  return (\n    <svg className={cn(className)}>\n      <use href={`img/sprite.svg#${iconId}`} />\n    </svg>\n  );\n};\n\nexport default Icon;\n"
+        }
+    ]
+}
