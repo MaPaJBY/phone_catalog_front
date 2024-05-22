@@ -1,0 +1,21 @@
+@import '../../utils/mediaQueries.module.scss';
+@import '../../utils/desktopHeaderFonts.scss';
+
+.all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.title {
+  @include h1-font;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

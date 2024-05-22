@@ -1,0 +1,21 @@
+@import '../../utils/mediaQueries.module.scss';
+
+.All {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.Image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
