@@ -9,10 +9,14 @@ import { ICartProduct, IProductDetails } from '../types';
 
 interface IProductsContext {
   phones: IProductDetails[];
+  isItemInCart: (productId: string) => boolean;
+  addItem: (product: ICartProduct) => void
 }
 
 export const ProductsContext = createContext<IProductsContext>({
   phones: [],
+  isItemInCart: () => false,
+  addItem: (_product: ICartProduct) => {},
 });
 
 interface ICartItem {
@@ -38,6 +42,21 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
 
     return item ? JSON.parse(item) : {};
   });
+
+  const isItemInCart = (id: string) => !!cartItems[id];
+
+  const addItem = (product: ICartProduct) => {
+    setCartItems((prevCartItems) => {
+      const prevProduct = prevCartItems[product.id];
+
+      return {
+        ...prevCartItems,
+        [product.id]: prevProduct
+          ? { ...prevProduct, count: prevProduct.count + 1 }
+          : { product, count: 1 },
+      };
+    });
+  };
 
   useEffect(() => {
     fetch('/api/phones.json')
@@ -72,6 +91,8 @@ export const ProductsProvider: FC<Props> = ({ children }) => {
     <ProductsContext.Provider
       value={{
         phones,
+        isItemInCart,
+        addItem
       }}
     >
       {children}
