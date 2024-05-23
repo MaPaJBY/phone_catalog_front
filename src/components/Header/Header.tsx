@@ -8,9 +8,7 @@ import logoForHeader from './logoForHeader/Logo.png';
 export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
-      {/* <div className={styles.divLogo}> */}
       <img className={styles.divLogo} src={logoForHeader} alt="logo" />
-      {/* </div> */}
       <nav className={styles.navbar}>
         <ul className={styles.navlinks}>
           <li>
