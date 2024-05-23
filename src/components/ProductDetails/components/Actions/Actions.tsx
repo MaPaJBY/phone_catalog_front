@@ -84,7 +84,7 @@ export default function Description({ product }: Props) {
             {colorsAvailable.map((color) => (
               <li className={style.item}>
                 <Link
-                  to={`/phones/${getProductLink({
+                  to={`/product/${getProductLink({
                     id,
                     newPart: color,
                   })}`}
@@ -103,7 +103,7 @@ export default function Description({ product }: Props) {
             {capacityAvailable.map((capacityItem) => (
               <li className={style.item}>
                 <Link
-                  to={`/phones/${getProductLink({
+                  to={`/product/${getProductLink({
                     id,
                     newPart: capacityItem.toLowerCase(),
                     index: -2,
