@@ -23,6 +23,7 @@ export interface IProductDetails {
   camera: string;
   zoom: string;
   cell: string[];
+  price: number;
 }
 
 export interface ICartProduct {
@@ -47,4 +48,12 @@ export enum Icons {
   PLUS = 'Plus',
   CLOSE = 'Close',
   BURGER = 'Burger',
+}
+
+export enum SortType {
+  AZ = 'az',
+  ZA = 'za',
+  LOW_TO_HIGH = 'lowToHigh',
+  HIGH_TO_LOW = 'highToLow',
+  ALL = 'All',
 }

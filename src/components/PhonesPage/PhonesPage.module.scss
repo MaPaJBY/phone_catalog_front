@@ -26,109 +26,115 @@
   }
 }
 
-@include mQ.phone {
-  .title {
-    margin-top: 24px;
+.title {
+  margin-top: 24px;
 
-    @include mHF.h1-font;
+  @include mHF.h1-font;
 
-    grid-column: span 4;
+  grid-column: span 4;
+  color: cM.$primary;
+}
+
+.label {
+  color: cM.$secondary;
+}
+
+.subText {
+  margin-top: 8px;
+
+  @include mF.body-font;
+
+  grid-column: span 4;
+  color: cM.$secondary;
+}
+
+.filter {
+  grid-column: span 1;
+  margin-top: 32px;
+  justify-content: center;
+  align-items: center;
+
+  @include mF.body-font;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-column: span 4;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cardContainer {
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+}
+
+.pageSelector {
+  grid-column: span 4;
+  margin-bottom: 64px;
+  display: grid;
+  place-content: center;
+  grid-auto-flow: column;
+  gap: 8px;
+
+  @include mF.body-font;
+}
+
+.pageNumber {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  margin: 0 4px;
+  border: 1px solid cM.$elements;
+  color: cM.$primary;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  &:hover {
+    border-color: cM.$primary;
     color: cM.$primary;
   }
 
-  .subText {
-    margin-top: 8px;
-
-    @include mF.body-font;
-
-    grid-column: span 4;
-    color: cM.$secondary;
+  &.active {
+    background-color: cM.$primary;
+    color: cM.$elements;
   }
+}
 
-  .filter {
-    grid-column: span 2;
-    margin-top: 32px;
+.pageSelector .arrowLeft,
+.pageSelector .arrowRight {
+  display: inline-block;
+  border: 1px solid cM.$elements;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 47px;
+  height: 48px;
+  place-self: center;
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
   }
+}
 
-  .cardsContainer {
-    display: flex;
-    grid-column: span 4;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 24px;
-    gap: 16px;
-  }
-
-  .cardContainer {
-    &:not(:first-child) {
-      margin-top: 40px;
-    }
-  }
-
-  .pageSelector {
-    grid-column: span 4;
-    margin-top: 24px;
-    margin-bottom: 64px;
-    display: grid;
-    place-content: center;
-    grid-auto-flow: column;
-    gap: 8px;
-  }
-
-  .pageNumber {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-    padding: 8px;
-    margin: 0 4px;
-    border: 1px solid cM.$elements;
-    color: cM.$primary;
-    cursor: pointer;
-    transition: border-color 0.3s;
-    &:hover {
-      border-color: cM.$primary;
-      color: cM.$primary;
-    }
-
-    &.active {
-      background-color: cM.$primary;
-      color: cM.$elements;
-    }
-  }
-
-  .pageSelector .arrowLeft,
-  .pageSelector .arrowRight {
-    display: inline-block;
-    border: 1px solid cM.$elements;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 47px;
-    height: 48px;
-    place-self: center;
-
-    &.disabled {
-      cursor: not-allowed;
-      opacity: 0.5;
-      pointer-events: none;
-    }
-  }
-
-  .pageSelector .arrowLeft:hover,
-  .pageSelector .arrowRight:hover {
-    border: 1px solid cM.$primary;
-    transition: background-color 0.3s;
-  }
+.pageSelector .arrowLeft:hover,
+.pageSelector .arrowRight:hover {
+  border: 1px solid cM.$primary;
+  transition: background-color 0.3s;
 }
 
 @include mQ.tablet {
   .title {
+    grid-column: span 12;
     margin-top: 40px;
 
     @include dHF.h1-font;
-
-    grid-column: span 12;
   }
 
   .subText {
@@ -136,8 +142,9 @@
   }
 
   .filter {
-    grid-column: span 4;
     margin-top: 40px;
+    justify-content: center;
+    align-items: center;
   }
 
   .cardsContainer {
@@ -145,6 +152,7 @@
     grid-template-columns: repeat(auto-fill, 320px);
     grid-column: span 12;
     justify-content: center;
+    margin-top: 24px;
   }
 
   .pageSelector {
@@ -159,38 +167,41 @@
 }
 
 @include mQ.desktop {
-  .title {
-    grid-column: span 24;
-  }
-
-  .subText {
-    margin-top: 8px;
-
-    @include mF.body-font;
-
-    grid-column: span 24;
-  }
-
-  .cardsContainer {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-column: span 24;
-    align-items: center;
-  }
-
-  .cardContainer {
-    &:not(:first-child) {
-      margin-top: 40px;
+  .phonesPage {
+    .title {
+      grid-column: span 24;
     }
-  }
 
-  .pageSelector {
-    grid-column: span 24;
-    display: grid;
-    margin-top: 40px;
-    margin-bottom: 80px;
-    place-content: center;
-    grid-auto-flow: column;
-    gap: 8px;
+    .subText {
+      margin-top: 8px;
+      grid-column: span 24;
+    }
+
+    .cardsContainer {
+      display: grid;
+      grid-column: span 24;
+      grid-template-columns: repeat(4, auto);
+      align-items: center;
+
+      .cardContainer {
+        &:not(:first-child) {
+          margin-top: 40px;
+        }
+      }
+    }
+
+    .pageSelector {
+      grid-column: span 24;
+      display: grid;
+      margin-top: 40px;
+      margin-bottom: 80px;
+      place-content: center;
+      grid-auto-flow: column;
+      gap: 8px;
+    }
+
+    .filter {
+      grid-column: span 5;
+    }
   }
 }
