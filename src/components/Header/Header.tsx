@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './Header.module.scss';
 import Icon from '../Icon/Icon';
 import { Icons } from '../../types';
+import CartBadge from '../Badge/Badge';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,12 +40,19 @@ export const Header: React.FC = () => {
         <div className={styles.icons}>
           <Icon iconId={Icons.HEART} className={styles.heart} />
           <Icon iconId={Icons.CART} className={styles.cart} />
+<<<<<<< HEAD
           <div className={styles.union} onClick={toggleMenu}>
             <Icon
               iconId={isMenuOpen ? Icons.CLOSE : Icons.BURGER}
               className={styles.burger}
             />
           </div>
+=======
+          <CartBadge />
+        </NavLink>
+        <div className={styles.union}>
+          <Icon iconId={Icons.BURGER} className={styles.burger} />
+>>>>>>> origin/master
         </div>
       </header>
       <div className={`${styles.overlay} ${isMenuOpen ? styles.open : ''}`}>
