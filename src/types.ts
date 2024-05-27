@@ -56,4 +56,6 @@ export enum SortType {
   LOW_TO_HIGH = 'lowToHigh',
   HIGH_TO_LOW = 'highToLow',
   ALL = 'All',
+  NORMAL = 'Normal',
+  WITHOUT_SORT = 'WithoutSort',
 }

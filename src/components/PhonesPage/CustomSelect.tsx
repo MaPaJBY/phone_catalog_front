@@ -3,18 +3,18 @@ import { SortType } from '../../types';
 import styles from './CustomSelect.module.scss';
 
 interface Option {
-  value: SortType | number;
+  value: SortType | number | undefined;
   label: string;
 }
 
 interface CustomSelectProps {
   options: Option[];
-  value: number | SortType;
-  onChange: (value: number | SortType) => void;
+  value: SortType | number | undefined;
+  onChange: (value: SortType | number | undefined) => void;
   className: string;
 }
 
-export const CustomSelect = ({
+export const CustomSelect: React.FC<CustomSelectProps> = ({
   options,
   value,
   onChange,
@@ -27,15 +27,17 @@ export const CustomSelect = ({
     setIsOpen(!isOpen);
   };
 
-  const handleOptionClick = (optionValue: SortType | number) => {
-    onChange(optionValue);
-    setIsOpen(false);
+  const handleOptionClick = (optionValue: SortType | number | undefined) => {
+    if (typeof optionValue !== 'undefined') {
+      onChange(optionValue);
+      setIsOpen(false);
+    }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
       dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
+      !dropdownRef.current.contains(event.target as HTMLElement)
     ) {
       setIsOpen(false);
     }
@@ -52,7 +54,9 @@ export const CustomSelect = ({
   return (
     <div className={`${styles.customSelect} ${className}`} ref={dropdownRef}>
       <div className={styles.selectedOption} onClick={toggleDropdown}>
-        {options.find(option => option.value === value)?.label || 'All'}
+        {value === undefined || !options.find(option => option.value === value)
+          ? 'Select...'
+          : options.find(option => option.value === value)?.label}
       </div>
       {isOpen && (
         <div className={styles.optionsContainer}>

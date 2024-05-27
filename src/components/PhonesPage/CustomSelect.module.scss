@@ -43,6 +43,8 @@
     overflow-y: auto;
     background-color: cM.$white;
     z-index: 1;
+    color: cM.$secondary;
+
 
     .option {
       padding: 8px 12px;
@@ -50,6 +52,7 @@
 
       &:hover {
         background-color: cM.$elements;
+        color: cM.$primary;
       }
     }
   }

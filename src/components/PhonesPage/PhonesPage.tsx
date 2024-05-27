@@ -1,4 +1,3 @@
-type Props = {};
 import { useEffect, useState } from 'react';
 import { useProductsContext } from '../../context/ProductsContext';
 import ProductCard from '../ProductCard';
@@ -8,6 +7,7 @@ import { IProductDetails, Icons, SortType } from '../../types';
 import { CustomSelect } from './CustomSelect';
 
 const options = [
+  { value: SortType.WITHOUT_SORT, label: 'Without Sort' },
   { value: SortType.AZ, label: 'A to Z' },
   { value: SortType.ZA, label: 'Z to A' },
   { value: SortType.LOW_TO_HIGH, label: 'Lowest Price' },
@@ -22,10 +22,21 @@ const itemsPerPageOptions = [
   { value: SortType.ALL, label: 'All' },
 ];
 
-export default function PhonesPage({}: Props) {
+export default function PhonesPage({}) {
   const { phones } = useProductsContext();
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(16);
+  const [itemsPerPage, setItemsPerPage] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+
+    return Number(params.get('itemsPerPage')) || 16;
+  });
+  const [sortType, setSortType] = useState<SortType>(() => {
+    const params = new URLSearchParams(window.location.search);
+
+    return (params.get('sort') as SortType) || SortType.WITHOUT_SORT;
+  });
+
+  const [isFilter, setIsFilter] = useState(false);
 
   const sortPhones = (
     phonesList: IProductDetails[],
@@ -48,14 +59,15 @@ export default function PhonesPage({}: Props) {
         break;
       case SortType.ALL:
         break;
+      case SortType.WITHOUT_SORT:
+        return phonesList;
+
       default:
         break;
     }
 
     return sortedPhones;
   };
-
-  const [sortType, setSortType] = useState<SortType>(SortType.AZ);
 
   const sortedPhones = sortPhones(phones, sortType);
 
@@ -100,16 +112,40 @@ export default function PhonesPage({}: Props) {
     return pageNumbers;
   };
 
-  const handleSortChange = (sortTypeI: SortType | number) => {
-    setSortType(sortTypeI as SortType);
-    setCurrentPage(1);
+  const handleSortChange = (sortTypeI: SortType | number | undefined) => {
+    if (sortTypeI === SortType.WITHOUT_SORT) {
+      window.history.replaceState({}, '', '/phones');
+      setSortType(SortType.WITHOUT_SORT);
+      setIsFilter(false);
+    } else {
+      setSortType(sortTypeI as SortType);
+      setCurrentPage(1);
+      setIsFilter(true);
+    }
   };
 
-  const handleItemsPerPageChange = (value: SortType | number) => {
+  const handleItemsPerPageChange = (value: SortType | number | undefined) => {
     if (value === SortType.ALL) {
       setItemsPerPage(phones.length);
     } else {
       setItemsPerPage(value as number);
+    }
+
+    if (sortType === SortType.WITHOUT_SORT) {
+      window.history.replaceState({}, '', `/phones?itemsPerPage=${value}`);
+      setIsFilter(false);
+    } else {
+      const params = new URLSearchParams();
+
+      params.set('sort', sortType);
+      params.set('itemsPerPage', itemsPerPage ? itemsPerPage.toString() : '');
+      params.set('page', '1');
+      window.history.replaceState(
+        {},
+        '',
+        `${window.location.pathname}?${params}`,
+      );
+      setIsFilter(true);
     }
 
     setCurrentPage(1);
@@ -118,6 +154,21 @@ export default function PhonesPage({}: Props) {
   useEffect(() => {
     setCurrentPage(1);
   }, [sortType]);
+
+  useEffect(() => {
+    if (isFilter) {
+      const params = new URLSearchParams();
+
+      params.set('sort', sortType);
+      params.set('itemsPerPage', itemsPerPage?.toString() || '');
+      params.set('page', currentPage.toString());
+      window.history.replaceState(
+        {},
+        '',
+        `${window.location.pathname}?${params}`,
+      );
+    }
+  }, [sortType, itemsPerPage, currentPage, isFilter]);
 
   return (
     <main className={styles.phonesPage}>
