@@ -51,9 +51,6 @@ export const Header: React.FC = () => {
             </div>
             <CartBadge />
           </NavLink>
-          <div className={styles.union}>
-            <Icon iconId={Icons.BURGER} className={styles.burger} />
-          </div>
         </div>
       </header>
       <div className={`${styles.overlay} ${isMenuOpen ? styles.open : ''}`}>
