@@ -47,6 +47,8 @@ export enum Icons {
   PLUS = 'Plus',
   CLOSE = 'Close',
   BURGER = 'Burger',
+  NORMAL = 'Normal',
+  WITHOUT_SORT = 'WithoutSort',
 }
 
 export interface ProductT {
@@ -62,4 +64,12 @@ export interface ProductT {
   ram: string;
   year: number;
   image: string;
+}
+
+export enum SortType {
+  AZ = 'az',
+  ZA = 'za',
+  LOW_TO_HIGH = 'lowToHigh',
+  HIGH_TO_LOW = 'highToLow',
+  ALL = 'All',
 }
