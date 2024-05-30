@@ -1,7 +1,6 @@
 @use '/src/utils/mediaQueries.module.scss' as mQ;
 @use '/src/utils/mobileHeaderFonts.scss' as mHF;
 @use '/src/utils/miscFonts.scss' as mF;
-@use '/src/utils/desktopHeaderFonts.scss' as dHF;
 @use '/src/constants/colors.module.scss' as cM;
 
 .customSelect {
@@ -17,9 +16,12 @@
   }
 
   .selectedOption {
-    padding: 8px 12px;
+    display: flex;
+    padding: 9px 12px;
     background-color: cM.$white;
     cursor: pointer;
+
+    @include mF.body-font;
 
     &::after {
       content: '';
@@ -28,8 +30,8 @@
       right: 12px;
       width: 8px;
       height: 8px;
-      border-right: 2px solid cM.$elements;
-      border-bottom: 2px solid cM.$elements;
+      border-right: 2px solid cM.$secondary;
+      border-bottom: 2px solid cM.$secondary;
       transform: translateY(-50%) rotate(45deg);
     }
   }
@@ -45,10 +47,11 @@
     z-index: 1;
     color: cM.$secondary;
 
-
     .option {
       padding: 8px 12px;
       cursor: pointer;
+      
+      @include mF.body-font;
 
       &:hover {
         background-color: cM.$elements;

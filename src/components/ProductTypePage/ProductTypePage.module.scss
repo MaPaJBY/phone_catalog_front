@@ -50,6 +50,12 @@
     margin-top: 32px;
   }
 
+  .label {
+    @include mF.body-font;
+    
+    color: cM.$secondary;
+  }
+
   .cardsContainer {
     display: flex;
     grid-column: span 4;
