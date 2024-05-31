@@ -7,6 +7,7 @@ import styles from './CartPage.module.scss';
 
 export default function CartPage({}: Props) {
   const { itemCount, totalPrice } = useCartSelector(state => state);
+  const { cart } = useCartSelector(state => state);
 
   return (
     <main className={styles.cartPage}>
@@ -14,7 +15,9 @@ export default function CartPage({}: Props) {
       <h1 className={styles.title}>Cart</h1>
       <div className={styles.cardsContainer}>
         <div className={styles.cardContainer}>
-          <CartItem />
+          {Object.values(cart).map(product => {
+            return <CartItem key={product.id} product={product} />;
+          })}
         </div>
       </div>
       <div className={styles.checkoutContainer}>

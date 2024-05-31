@@ -6,9 +6,10 @@
 .cartItemContainer {
   display: grid;
   justify-content: center;
+  margin: 16px;
 
   @include mQ.phone {
-    gap: 16px;
+    // gap: 16px;
     grid-template-columns: 1fr;
 
     .cartItem {
@@ -23,7 +24,7 @@
         padding: 8px;
 
         .closeIcon {
-          color: $elements;
+          color: $icons;
           align-items: center;
           margin: 24px 16px 32px 0;
           border: 0;
@@ -84,7 +85,7 @@
 
         .price {
           @include dHF.h3-font;
-          
+
           width: 80px;
           padding-left: 48px;
         }
