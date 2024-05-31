@@ -2,15 +2,13 @@ import { useState, useEffect, useMemo } from 'react';
 import ProductCard from '../ProductCard';
 import styles from './ProductTypePage.module.scss';
 import Icon from '../Icon';
-import {
-  Icons,
-  SortType,
-  IProductDetails,
-  convertToProductDetails,
-  convertToProductT,
-} from '../../types';
+import { Icons, SortType, IProductDetails } from '../../types';
 import { useProductsSelector } from '../../hooks/reduxHooks';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
+import {
+  convertToProductDetails,
+  convertToProductT,
+} from '../../utils/helpers';
 
 type Props = {
   productsType: 'phones' | 'tablets' | 'accessories';
