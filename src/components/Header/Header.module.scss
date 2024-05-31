@@ -45,7 +45,6 @@ body {
 
       @include tablet {
         max-width: 329px;
-
       }
 
       li {
@@ -161,6 +160,154 @@ body {
 
     @include desktop {
       display: none;
+    }
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  justify-content: start;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba($color: $white, $alpha: 1);
+
+  .overlay_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    border: 1px solid $elements;
+  }
+
+  .divLogo {
+    width: 80px;
+    height: 28px;
+    padding: 18px 24px;
+  }
+
+  &.open {
+    display: flex;
+  }
+
+  .close {
+    height: 16px;
+    width: 16px;
+    padding: 24px;
+    display: flex;
+    border: 1px solid $elements;
+    position: relative;
+
+    &:hover {
+      border-color: $primary;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: $primary;
+      }
+    }
+  }
+
+  .overlayNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+
+    .navLinksBurger {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-transform: uppercase;
+      flex-grow: 1;
+      margin-top: 24px;
+
+      @include h1-font;
+
+      li {
+        a {
+          color: #89939a;
+          text-decoration: none;
+          font-size: 12px;
+          position: relative;
+
+          &:hover {
+            color: $primary;
+
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: -8px;
+              height: 1px;
+              background-color: $primary;
+            }
+          }
+
+          &.active {
+            color: $primary;
+
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: -8px;
+              height: 1px;
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $elements;
+
+    .heartContainer {
+      display: flex;
+      height: 64px;
+      width: 50vh;
+      border: 1px solid $elements;
+      border-bottom: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cartContainer {
+      display: flex;
+      height: 64px;
+      width: 50vh;
+      border: 1px solid $elements;
+      border-left: 0px;
+      border-bottom: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .heart,
+    .cart {
+      height: 16px;
+      width: 16px;
+      padding: 24px;
+      position: relative;
+      border-bottom: 2px solid transparent;
+
+      &:active {
+        border-bottom: 2px solid $primary;
+        width: 100%;
+      }
     }
   }
 }
